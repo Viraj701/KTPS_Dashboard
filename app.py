@@ -206,11 +206,11 @@ if uploaded is not None:
 
     st.markdown("**Coal sources detected** (edit/add rows if parser missed anything)")
     cs_df = pd.DataFrame(coal_sources) if coal_sources else pd.DataFrame(columns=["name","GCV_ARB","Landed_RsPerMT","Eff_RsPerMkcal","Pct_share"])
-    edited_cs = st.experimental_data_editor(cs_df, num_rows="dynamic")
+    edited_cs = st.data_editor(cs_df, num_rows="dynamic")
 
     st.markdown("**Reasons for fuel cost disallowance (breakup)**")
     reasons_df = pd.DataFrame(reasons) if reasons else pd.DataFrame(columns=["reason","amount_rs_cr"])
-    edited_reasons = st.experimental_data_editor(reasons_df, num_rows="dynamic")
+    edited_reasons = st.data_editor(reasons_df, num_rows="dynamic")
 
     st.markdown("---")
     meta_col1, meta_col2, meta_col3 = st.columns(3)
